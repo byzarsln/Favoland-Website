@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>New Reservation</title>
+  <link rel="stylesheet" href="styles/new-reservation.css" />
+  <script src="js/new-reservation.js" defer></script>
+</head>
+
+<body>
+  <form id="newReservationForm">
+    <div class="reservation-info">
+      <h2>New Reservation</h2>
+      <label for="ticket-type">Select Your Ticket Type:</label>
+      <br />
+      <select id="ticket-type" required>
+        <option value="" id="default">Select a place</option>
+      </select>
+      <br />
+      <p id="ticket-type-description"></p>
+      <p id="single-ticket-price"></p>
+      <label for="date">Date:</label>
+      <br />
+      <input type="date" id="date" required>
+      <br />
+      <label for="people">Number of People:</label>
+      <br />
+      <input type="number" id="people" required min="1" max="10">
+      <br />
+      <p id="price"></p>
+      <button id="go-to-payment">Go To Payment</button>
+    </div>
+    <div class="payment-info hidden">
+      <h3>Enter Your Card Information</h3>
+      <label for="card-number">Credit Card Number:</label>
+      <br />
+      <input type="string" id="card-number" required pattern="\d{16}"
+        title="Credit card number must be exactly 16 digits">
+      <br />
+      <label for="expiry-month">Expiry Month:</label>
+      <br />
+      <input type="number" id="expiry-month" required min="1" max="12">
+      <br />
+      <label for="expiry-year">Expiry Year:</label>
+      <br />
+      <input type="number" id="expiry-year" required>
+      <br />
+      <label for="security-code">Security Code:</label>
+      <br />
+      <input type="text" id="security-code" required pattern="\d{3}" title="Security code must be exactly 3 digits">
+      <br />
+      <input type="checkbox" id="save-card">
+      <label for="save-card">Do you want to save your card?</label>
+      <br />
+      <label for="card-name" class="hidden">Name your card:</label>
+      <br />
+      <input type="text" id="card-name" class="hidden">
+      <br />
+      <h3>Saved Cards</h3>
+      <div id="card-container">
+      </div>
+      <button id="go-back">Go Back</button>
+      <input type="submit" value="Submit">
+    </div>
+  </form>
+
+</body>
+
+</html>

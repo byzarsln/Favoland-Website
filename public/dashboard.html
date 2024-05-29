@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard</title>
+  <link rel="stylesheet" href="styles/dashboard.css" />
+  <script src="js/dashboard.js" defer></script>
+</head>
+
+<body>
+  <h2>Welcome, <span id="username"></span>!</h2>
+  <div>
+    <a href="/change-password">
+      <button>Change Password</button>
+    </a>
+    <br />
+    <a href="/new-reservation">
+      <button>New Reservation</button>
+    </a>
+    <br />
+    <button onclick="signOut()">Sign Out</button>
+  </div>
+
+  <h3>Your Reservations</h3>
+  <ul id="reservations"></ul>
+</body>
+
+</html>
