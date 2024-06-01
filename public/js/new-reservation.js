@@ -120,6 +120,7 @@ function updateTicketTypeDetails() {
   if (selectedOptionId === "default") {
     document.getElementById("ticket-type-description").textContent = "";
     document.getElementById("single-ticket-price").textContent = "";
+    document.getElementById("price").textContent = "";
   } else {
     const selectedTicketType = ticketTypesData.find(
       (t) => t._id === selectedOptionId
