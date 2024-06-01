@@ -19,6 +19,8 @@ expiryMonthInput.addEventListener("change", validateExpiryDate);
 function validateExpiryDate() {
   if (parseInt(expiryYearInput.value, 10) === currentYear) {
     expiryMonthInput.setAttribute("min", currentMonth);
+  } else {
+    expiryMonthInput.setAttribute("min", 1);
   }
 }
 
