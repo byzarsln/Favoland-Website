@@ -54,6 +54,11 @@ const addReservation = async (req, res) => {
 
     // If saveCard is true, save the credit card information
     if (saveCard) {
+      if (cardName.length < 3) {
+        res.status(400).json({ error: "Card name must be at least 3 characters long" });
+        return;
+      }
+  
       user.savedCreditCards.push({
         cardName,
         cardNumber,

@@ -14,9 +14,9 @@ document
 async function handleChangePassword(event) {
   event.preventDefault();
 
-  const oldPassword = document.getElementById("oldPassword").value;
-  const newPassword = document.getElementById("newPassword").value;
-  const confirmPassword = document.getElementById("confirmPassword").value;
+  const oldPassword = $("#oldPassword").val();
+  const newPassword = $("#newPassword").val();
+  const confirmPassword = $("#confirmPassword").val();
 
   if (!userId) {
     alert("User not found");

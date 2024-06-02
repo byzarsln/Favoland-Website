@@ -10,8 +10,8 @@ document.getElementById("signinForm").onsubmit = function (e) {
 };
 
 async function handleSignin() {
-  const username = document.getElementById("username").value;
-  const password = document.getElementById("password").value;
+  const username = $("#username").val();
+  const password = $("#password").val();
 
   try {
     const response = await fetch("/signin", {

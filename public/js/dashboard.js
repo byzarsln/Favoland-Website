@@ -2,24 +2,24 @@
 const user = JSON.parse(localStorage.getItem("user"));
 
 if (user) {
-  document.getElementById("username").textContent = user.username;
+  $("#username").text(user.username);
 } else {
   window.location.href = "/signin"; // Redirect to sign-in page
 }
 
 // Render reservations or display a message if there are none
 function renderReservations(user) {
-  const reservationsList = document.getElementById("reservations");
+  const reservationsList = $("#reservations");
 
   if (user && user.reservations.length > 0) {
     user.reservations.forEach((reservation) => {
       const listItem = createReservationListItem(reservation);
-      reservationsList.appendChild(listItem);
+      reservationsList.append(listItem);
     });
   } else {
     const noReservationsMessage = document.createElement("p");
     noReservationsMessage.textContent = "You don't have any reservations.";
-    reservationsList.appendChild(noReservationsMessage);
+    reservationsList.append(noReservationsMessage);
   }
 }
 

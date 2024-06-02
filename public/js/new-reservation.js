@@ -1,3 +1,4 @@
+
 let ticketTypesData = [];
 
 // Set the min attribute of the date input field to the current date
@@ -5,10 +6,8 @@ const today = new Date();
 const currentYear = today.getFullYear();
 const currentMonth = today.getMonth() + 1;
 
-document
-  .getElementById("date")
-  .setAttribute("min", today.toISOString().split("T")[0]);
-document.getElementById("expiry-year").setAttribute("min", currentYear);
+$("date").attr("min", today.toISOString().split("T")[0])
+$("#expiry-year").attr("min", currentYear);
 
 const expiryYearInput = document.getElementById("expiry-year");
 const expiryMonthInput = document.getElementById("expiry-month");
@@ -33,7 +32,7 @@ if (!userId) {
 }
 
 // Fetch ticket types from the server and populate the select element
-const select = document.getElementById("ticket-type");
+const select = $("#ticket-type");
 
 fetch("/ticket-types")
   .then((response) => response.json())
@@ -49,7 +48,7 @@ function populateTicketTypes(ticketTypes) {
     option.id = ticketType._id;
     option.value = ticketType.type;
     option.textContent = ticketType.type;
-    select.appendChild(option);
+    select.append(option);
   });
 }
 
@@ -62,21 +61,19 @@ function handleFormSubmit(event) {
 
   const reservationData = {
     userId: user._id,
-    ticketType: document.getElementById("ticket-type").value,
-    date: document.getElementById("date").value,
-    people: document.getElementById("people").value,
+    ticketType: $("#ticket-type").val(),
+    date: $("#date").val(),
+    people: $("#people").val(),
     price:
       parseFloat(
-        document
-          .getElementById("price")
-          .textContent.replace("Total Price: $", "")
+          $("#price").text().replace("Total Price: $", "")
       ) || 0,
-    saveCard: document.getElementById("save-card").checked,
-    cardName: document.getElementById("card-name").value,
-    cardNumber: document.getElementById("card-number").value,
-    expiryMonth: document.getElementById("expiry-month").value,
-    expiryYear: document.getElementById("expiry-year").value,
-    securityCode: document.getElementById("security-code").value,
+      saveCard: $("#save-card").prop("checked"),
+      cardName: $("#card-name").val(),
+      cardNumber: $("#card-number").val(),
+      expiryMonth: $("#expiry-month").val(),
+      expiryYear: $("#expiry-year").val(),
+      securityCode: $("#security-code").val(),
   };
 
   createReservation(reservationData);
@@ -118,18 +115,15 @@ function updateTicketTypeDetails() {
   const selectedOptionId = ticketTypeSelect.selectedOptions[0].id;
 
   if (selectedOptionId === "default") {
-    document.getElementById("ticket-type-description").textContent = "";
-    document.getElementById("single-ticket-price").textContent = "";
-    document.getElementById("price").textContent = "";
+    $("#ticket-type-description").text("");
+    $("#single-ticket-price").text("");
+    $("#price").text("");
   } else {
     const selectedTicketType = ticketTypesData.find(
       (t) => t._id === selectedOptionId
     );
-    document.getElementById("ticket-type-description").textContent =
-      selectedTicketType.description;
-    document.getElementById(
-      "single-ticket-price"
-    ).textContent = `(A single ticket price is $${selectedTicketType.basePrice}.)`;
+    $("#ticket-type-description").text(selectedTicketType.description);
+    $("#single-ticket-price").text(`(A single ticket price is $${selectedTicketType.basePrice}.)`);
   }
 
   updatePrice();
@@ -147,9 +141,9 @@ function updatePrice() {
       (t) => t._id === ticketTypeId
     );
     const price = selectedTicketType.basePrice * people;
-    document.getElementById("price").textContent = `Total Price: $${price}`;
+    $("#price").text(`Total Price: $${price}`);
   } else {
-    document.getElementById("price").textContent = "";
+    $("#price").text("");
   }
 }
 
@@ -252,17 +246,22 @@ function toggleRadioButton(radioButton, cards, index) {
 
 function toggleFormElements(disabled) {
   const formElements = [
-    document.getElementById("card-number"),
-    document.getElementById("expiry-month"),
-    document.getElementById("expiry-year"),
-    document.getElementById("security-code"),
-    document.getElementById("save-card"),
-    document.getElementById("card-name"),
+    $("#card-number"),
+    $("#expiry-month"),
+    $("#expiry-year"),
+    $("#security-code"),
+    $("#save-card"),
+    $("#card-name"),
   ];
   formElements.forEach((element) => {
-    if (element) {
-      element.disabled = disabled;
-      if (!disabled) element.value = "";
+    if (element.length) {
+      element.prop('disabled', disabled);
+      if (disabled) element.val("");
+  
+      // If the element is the "save-card" checkbox and it is checked, uncheck it
+      if (element.attr('id') === 'save-card' && element.prop('checked')) {
+        element.prop('checked', false);
+      }
     }
   });
 }

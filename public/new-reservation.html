@@ -7,6 +7,7 @@
   <title>New Reservation</title>
   <link rel="stylesheet" href="styles/new-reservation.css" />
   <script src="js/new-reservation.js" defer></script>
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 </head>
 
 <body>
@@ -56,7 +57,7 @@
       <br />
       <label for="card-name" class="hidden">Name your card:</label>
       <br />
-      <input type="text" id="card-name" class="hidden">
+      <input type="text" id="card-name" class="hidden" minlength="3">
       <br />
       <h3>Saved Cards</h3>
       <div id="card-container">
