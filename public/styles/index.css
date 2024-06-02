@@ -39,6 +39,7 @@ nav ul li a {
 }
 
 button {
+    /* background: linear-gradient(to right, #db7093, #6495ed); */
     background-color: #db7093;
     color: white;
     border: none;
@@ -46,3 +47,11 @@ button {
     border-radius: 5px;
     cursor: pointer;
 }
+
+.navbar-title {
+    font-family: copperplate;
+    font-size: 36px;
+    background: linear-gradient(to right, #db7093, #6495ed);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
