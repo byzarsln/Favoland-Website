@@ -3,7 +3,7 @@ html {
   scroll-behavior: smooth;
 }
 
-.container {
+#navbar-container {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
@@ -23,20 +23,20 @@ body {
   /* background-color: #f4fafb; */
 }
 
-nav {
+#navbar {
   display: flex;
   align-items: center;
   justify-content: space-between;
   height: 15vh;
 }
 
-nav ul li {
+#navbar-link {
   list-style-type: none;
   display: inline;
   padding: 10px 20px;
 }
 
-nav ul li a {
+#navbar-link a {
   text-decoration: none;
   color: #db7093;
   font-size: 1.2rem;
@@ -48,7 +48,7 @@ nav ul li a {
   font-weight: bold;
 }
 
-button {
+#navbar-button {
   /* background: linear-gradient(to right, #db7093, #6495ed); */
   background-color: #db7093;
   font-family: cursive;
@@ -60,7 +60,7 @@ button {
   cursor: pointer;
 }
 
-.navbar-title {
+#navbar-title {
   font-family: copperplate;
   font-size: 36px;
   background: linear-gradient(to right, #db7093, #6495ed);
@@ -112,27 +112,13 @@ button {
   margin-left: 2rem;
 }
 
-#contact {
-  justify-content: center;
-  align-items: center;
-  font-family: palatino;
-  font-size: 1rem;
-}
-
-#gallery {
-  justify-content: center;
-  align-items: center;
-  font-family: palatino;
-  font-size: 1rem;
-}
-
 #logo {
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.icon {
+#icon {
   margin: 0 1rem;
 }
 
@@ -149,11 +135,14 @@ button {
 
 #favoland-park-text {
   font-size: 1.4rem;
+  font-family: palatino;
   line-height: 1.5;
   color: rgb(51, 48, 48);
 }
 #favoland-park-text h2 {
   color: #6495ed;
+  font-weight: bold;
+  margin: 1.5rem 0;
 }
 
 #california-adventure-park {
@@ -164,6 +153,7 @@ button {
 }
 #california-adventure-park-text {
   font-size: 1.4rem;
+  font-family: palatino;
   line-height: 1.5;
   color: rgb(51, 48, 48);
 }
@@ -174,4 +164,85 @@ button {
 
 #california-adventure-park-text h2 {
   color: #db7093;
+  font-weight: bold;
+  margin: 1.5rem 0;
+}
+
+#carouselExampleFade {
+  width: 750px;
+  height: 600px;
+  overflow: hidden;
+}
+
+#carouselExampleFade .carousel-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+#gallery {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 85vh;
+}
+
+#gallery h2 {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+}
+
+#contact {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 85vh;
+  padding: 0 2rem;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url("../images/contact.jpeg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+  color: rgb(245, 213, 213);
+}
+
+#contact h2 {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+}
+
+#contact-description {
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+#contact-info {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 4rem;
+}
+
+#contact-info a {
+  color: #db7093;
+}
+
+#contact-info > div {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex: 1;
+  margin-right: 9rem;
+}
+
+#contact-info > div:last-child {
+  margin-right: 0;
+}
+
+#contact-info h3 {
+  font-size: 1.4rem;
+  margin-bottom: 1rem;
 }
