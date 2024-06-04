@@ -56,6 +56,7 @@ function createReservationListItem(reservation) {
   cancelButton.textContent = "Cancel Reservation";
   cancelButton.id = reservation._id;
   cancelButton.onclick = cancelReservation;
+  cancelButton.className = "cancel-button";
 
   infoDiv.appendChild(ticketTypeElement);
   infoDiv.appendChild(dateElement);
