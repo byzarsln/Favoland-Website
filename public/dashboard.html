@@ -7,26 +7,49 @@
   <title>Dashboard</title>
   <link rel="stylesheet" href="styles/dashboard.css" />
   <link rel="icon" type="image/png" href="images/favicon.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
   <script src="js/dashboard.js" defer></script>
   <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 </head>
 
 <body>
+  <aside id="sidebar">
+    <div id="sidebar-photo">
+      <h3>FAVOLAND ✨</h3>
+      <img id="profile-photo" src="./images/profile_photo.jpeg" alt="">
+      <p id="sidebar-username"></p>
+    </div>
+    <ul id="sidebar-links">
+      <div>
+        <li>
+          <a href="/new-reservation">
+          <button id="new-reservation-button">New Reservation</button>
+          </a>
+        </li>
+        <li>
+          <a href="/change-password">
+          <button id="change-password-button">Change Password</button>
+          </a>
+        </li>
+      </div>
+      <div id="signout-button">
+        <li>
+          <button onclick="signOut()">Sign Out</button>
+        </li>
+      </div>
+    </ul>
+  </aside>
+  <div id="dashboard-content">
+    <!-- <video autoplay muted loop id="dashboardVideo">
+      <source src="images/dashboard-background.mp4" type="video/mp4">
+      Your browser does not support HTML5 video.
+    </video> -->
   <h2>Welcome, <span id="username"></span>!</h2>
-  <div>
-    <a href="/change-password">
-      <button>Change Password</button>
-    </a>
-    <br />
-    <a href="/new-reservation">
-      <button>New Reservation</button>
-    </a>
-    <br />
-    <button onclick="signOut()">Sign Out</button>
-  </div>
-
   <h3>Your Reservations</h3>
   <ul id="reservations"></ul>
+</div>
 </body>
 
 </html>

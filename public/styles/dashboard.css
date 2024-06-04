@@ -1,0 +1,118 @@
+body {
+  margin: 0;
+}
+
+html {
+  font-family: "Josefin Sans", sans-serif;
+}
+
+#sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 200px;
+  height: 100vh;
+  background: radial-gradient(circle, #6495ed, #fff0f5);
+  color: #fff;
+  padding: 20px;
+  /* border-right: 1px solid #fff0f5; */
+}
+
+#sidebar ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+#sidebar ul li a {
+  color: #fff;
+  text-decoration: none;
+}
+
+#dashboard-content {
+  margin-left: 250px;
+}
+
+#dashboard-content button {
+  font-family: "Josefin Sans", sans-serif;
+}
+
+#sidebar h3 {
+  font-family: copperplate;
+  background: linear-gradient(to right, #db7093, #6495ed);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 1.7rem;
+}
+
+#profile-photo {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#sidebar-photo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+#sidebar-username {
+  font-size: 1.3rem;
+}
+
+#signout-button {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  left: 30%;
+  margin-bottom: 90px;
+}
+
+#sidebar-links {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#dashboardVideo {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  z-index: -100;
+}
+#sidebar-links li:nth-child(1) {
+  margin-bottom: 20px;
+}
+
+#change-password-button,
+#new-reservation-button {
+  font-family: "Josefin Sans", sans-serif;
+  background-color: white;
+  color: #6495ed;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  border-radius: 1.5rem;
+}
+
+#signout-button button {
+  font-family: "Josefin Sans", sans-serif;
+  background-color: #6495ed;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  border-radius: 1.5rem;
+}

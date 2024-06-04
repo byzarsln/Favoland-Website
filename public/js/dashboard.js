@@ -105,3 +105,6 @@ function signOut() {
 
 // Initial rendering of reservations
 renderReservations(user);
+
+
+$("#sidebar-username").text(user.username);
