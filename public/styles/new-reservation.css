@@ -26,6 +26,7 @@ select {
   background-color: rgba(84, 150, 179, 0.6);
   padding: 0 0.5rem;
   box-sizing: border-box;
+  font-family: "Josefin Sans", sans-serif;
 }
 
 #newReservationForm {
