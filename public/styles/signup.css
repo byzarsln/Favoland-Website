@@ -2,6 +2,14 @@ body {
   font-family: "Josefin Sans", sans-serif;
 }
 
+input {
+  border-radius: 1rem;
+  border: none;
+  padding: 4px 8px;
+  font-weight: bold;
+  font-family: "Josefin Sans", sans-serif;
+}
+
 #signupVideo {
   position: fixed;
   right: 0;
