@@ -26,6 +26,20 @@ function renderReservations(user) {
 function createReservationListItem(reservation) {
   const listItem = document.createElement("li");
 
+  const ticketTypeImage = document.createElement("img");
+  ticketTypeImage.id = "ticket-type-image"
+
+  if (reservation.ticketType === "One Park Per Day") {
+    ticketTypeImage.src = "../images/one-park-per-day.png";
+    ticketTypeImage.alt = "One Park Per Day";
+  } else {
+    ticketTypeImage.src = "../images/park-hopper.png";
+    ticketTypeImage.alt = "Park Hopper";
+  }
+
+  const infoDiv = document.createElement("div");
+  infoDiv.id = "info-div";
+
   const ticketTypeElement = document.createElement("p");
   ticketTypeElement.textContent = `Ticket Type: ${reservation.ticketType}`;
 
@@ -43,11 +57,14 @@ function createReservationListItem(reservation) {
   cancelButton.id = reservation._id;
   cancelButton.onclick = cancelReservation;
 
-  listItem.appendChild(ticketTypeElement);
-  listItem.appendChild(dateElement);
-  listItem.appendChild(peopleElement);
-  listItem.appendChild(priceElement);
-  listItem.appendChild(cancelButton);
+  infoDiv.appendChild(ticketTypeElement);
+  infoDiv.appendChild(dateElement);
+  infoDiv.appendChild(peopleElement);
+  infoDiv.appendChild(priceElement);
+  infoDiv.appendChild(cancelButton);
+
+  listItem.appendChild(ticketTypeImage);
+  listItem.appendChild(infoDiv);
 
   return listItem;
 }
