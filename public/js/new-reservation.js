@@ -6,7 +6,7 @@ const today = new Date();
 const currentYear = today.getFullYear();
 const currentMonth = today.getMonth() + 1;
 
-$("date").attr("min", today.toISOString().split("T")[0])
+$("#date").attr("min", today.toISOString().split("T")[0])
 $("#expiry-year").attr("min", currentYear);
 
 const expiryYearInput = document.getElementById("expiry-year");

@@ -1,3 +1,138 @@
 .hidden {
   display: none;
 }
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: "Josefin Sans", sans-serif;
+  color: white;
+  font-size: 1.1rem;
+}
+body {
+  background-image: url("../images/payment.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+input,
+select {
+  color: white;
+  border-radius: 1rem;
+  border: none;
+  height: 1.5rem;
+  width: 10rem;
+  background-color: rgba(84, 150, 179, 0.6);
+  padding: 0 0.5rem;
+  box-sizing: border-box;
+}
+
+#newReservationForm {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100vh;
+  width: 400px;
+  margin: 0 auto;
+  padding-left: 50%;
+}
+
+.reservation-info,
+.payment-info {
+  width: 100%;
+  text-align: left;
+}
+
+#ticket-type-description,
+#single-ticket-price,
+#price {
+  margin: 10px 0;
+  color: #ffd633;
+  /* #f2e3a9 */
+  /* #ffd633 */
+}
+
+#ticket-type,
+#date,
+#people,
+#card-number,
+#expiry-month,
+#expiry-year,
+#security-code,
+#card-name {
+  margin: 10px 0;
+}
+
+input[type="checkbox"],
+input[type="radio"] {
+  width: auto;
+  margin-right: 10px;
+}
+
+input[type="radio"] {
+  margin-top: 0;
+}
+
+#save-card-wrapper,
+.card {
+  display: flex;
+  align-items: center;
+}
+
+#card-container {
+  margin-bottom: 20px;
+}
+
+#date,
+#single-ticket-price {
+  margin-bottom: 20px;
+}
+
+#people {
+  width: 50px;
+}
+
+#go-to-payment {
+  font-family: "Josefin Sans", sans-serif;
+  background: linear-gradient(to right, #ffcc02, #93d034);
+  color: white;
+  height: auto;
+  width: auto;
+  padding: 12px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  border-radius: 1.5rem;
+  font-size: 0.8rem;
+}
+
+#go-back {
+  font-family: "Josefin Sans", sans-serif;
+  background-color: #062575bd;
+  color: white;
+  height: auto;
+  width: auto;
+  padding: 12px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  border-radius: 1.5rem;
+  font-size: 0.8rem;
+}
+
+#complete-reserv {
+  font-family: "Josefin Sans", sans-serif;
+  background-color: #3ce155;
+  color: white;
+  height: auto;
+  width: auto;
+  padding: 12px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  border-radius: 1.5rem;
+  font-size: 0.8rem;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}

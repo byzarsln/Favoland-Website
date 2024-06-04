@@ -7,19 +7,26 @@
   <title>Sign Up</title>
   <link rel="stylesheet" href="styles/signup.css" />
   <link rel="icon" type="image/png" href="images/favicon.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
   <script src="js/signup.js" defer></script>
   <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 </head>
 
 <body>
-  <h2>Sign Up</h2>
+  <video autoplay muted loop id="signupVideo">
+    <source src="images/buiki.mp4" type="video/mp4">
+    Your browser does not support HTML5 video.
+  </video>
   <form method="post" id="signupForm">
+    <h2>Sign Up</h2>
     <label for="username">Username:</label><br />
     <input type="text" id="username" name="username" pattern="[a-z]*" title="Lowercase letters only, no spaces"
       minlength="3" maxlength="20" required /><br />
     <label for="password">Password:</label><br />
     <input type="password" id="password" name="password" minlength="8" title="8 characters minimum" required /><br />
-    <input type="submit" value="Sign Up" />
+    <input id="signup-button" type="submit" value="Sign Up" />
 
   </form>
 </body>

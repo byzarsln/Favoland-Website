@@ -7,6 +7,9 @@
   <title>New Reservation</title>
   <link rel="stylesheet" href="styles/new-reservation.css" />
   <link rel="icon" type="image/png" href="images/favicon.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
   <script src="js/new-reservation.js" defer></script>
   <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 </head>
@@ -53,8 +56,10 @@
       <br />
       <input type="text" id="security-code" required pattern="\d{3}" title="Security code must be exactly 3 digits">
       <br />
-      <input type="checkbox" id="save-card">
-      <label for="save-card">Do you want to save your card?</label>
+      <div id="save-card-wrapper">
+        <input type="checkbox" id="save-card">
+        <label for="save-card">Do you want to save your card?</label>
+      </div>
       <br />
       <label for="card-name" class="hidden">Name your card:</label>
       <br />
@@ -64,7 +69,7 @@
       <div id="card-container">
       </div>
       <button id="go-back">Go Back</button>
-      <input type="submit" value="Submit">
+      <input  id="complete-reserv" type="submit" value="Complete Reservation">
     </div>
   </form>
 
